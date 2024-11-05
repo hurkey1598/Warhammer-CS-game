@@ -16,5 +16,31 @@ namespace Prototype_1._1
         {
             InitializeComponent();
         }
+
+        Form2 Game;
+
+
+        private void GameBtn_Click(object sender, EventArgs e)
+        {
+            Game = new Form2(this);
+            Game.FormClosed += Game_FormClosed;
+            Game.Show();
+            this.Hide();
+        }
+
+        private void SettingBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Game_FormClosed(object sender, FormClosedEventArgs e)
+        { 
+            this.Close();
+        }
     }
 }
