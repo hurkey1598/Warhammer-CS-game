@@ -28,7 +28,7 @@ namespace Prototype_1._1
         {
             PictureBox image;
             image = new PictureBox();
-            image.Size = new System.Drawing.Size(50, 50);
+            image.Size = new System.Drawing.Size(squaresize-2, squaresize-2);
             image.SizeMode = PictureBoxSizeMode.StretchImage;
             image.Location = new System.Drawing.Point(x, y);
             image.Image = Properties.Resources.Space_marine;
@@ -66,20 +66,13 @@ namespace Prototype_1._1
 
         private void MouseClicked(object sender, MouseEventArgs e)
         {
-            for (int i = 0; i < boxes.Length; i++)
-            {
-                if (boxes[i].Contains(e.Location))
-                {
-                    Player(boxes[i].X, boxes[i].Y);
-                    break;
-                }
-            }
+            Player(MX,MY);
         }
 
         private void MouseMoved(object sender, MouseEventArgs e)
         {
-            MX = Convert.ToInt32(e.X / squaresize) * squaresize;
-            MY = Convert.ToInt32(e.Y / squaresize) * squaresize;
+            MX = 1+Convert.ToInt32(e.X / squaresize) * squaresize;
+            MY = 1+Convert.ToInt32(e.Y / squaresize) * squaresize;
         }
 
         
