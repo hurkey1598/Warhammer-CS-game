@@ -15,7 +15,7 @@ namespace Prototype_1._1
         public Form2(Form1 parent)
         {
             InitializeComponent();
-            
+            this.DoubleBuffered = true;
         }
 
         int MX = 10;
@@ -46,7 +46,7 @@ namespace Prototype_1._1
             {
                 e.Graphics.DrawLine(Pens.Red, i * squaresize, 0, i * squaresize, squaresize * highwidth);
                 e.Graphics.DrawLine(Pens.Red, 0, i * squaresize, squaresize * highwidth, i * squaresize);
-
+                e.Graphics.DrawRectangle(Pens.Green, MX, MY, squaresize, squaresize);
                 
                 for (int j = 0; j < highwidth; j++)
                 {
@@ -55,10 +55,10 @@ namespace Prototype_1._1
                         Rectangle rect = new Rectangle(j * squaresize, i * squaresize, squaresize, squaresize);
                         boxes[index++] = rect;
 
-                        if (rect.Contains(MousePosition))
-                        {
-                            e.Graphics.DrawRectangle(new Pen(Color.Green, 2), rect);
-                        }
+                        //if (rect.Contains(MousePosition))
+                        //{
+                        //    e.Graphics.DrawRectangle(new Pen(Color.Green, 2), rect);
+                        //}
                     }
                 }
             }
@@ -73,6 +73,7 @@ namespace Prototype_1._1
         {
             MX = 1+Convert.ToInt32(e.X / squaresize) * squaresize;
             MY = 1+Convert.ToInt32(e.Y / squaresize) * squaresize;
+            this.Invalidate();
         }
 
         
