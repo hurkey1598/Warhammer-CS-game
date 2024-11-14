@@ -95,5 +95,8 @@
   <ItemGroup>
     <None Include="Resources\ultramarine logo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Space marine Background Removed.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
