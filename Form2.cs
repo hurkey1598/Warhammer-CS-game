@@ -31,7 +31,7 @@ namespace Prototype_1._1
             image.Size = new System.Drawing.Size(squaresize-2, squaresize-2);
             image.SizeMode = PictureBoxSizeMode.StretchImage;
             image.Location = new System.Drawing.Point(x, y);
-            image.Image = Properties.Resources.Space_marine;
+            image.Image = Properties.Resources.Space_marine_2;
             this.Controls.Add(image);
         }
 

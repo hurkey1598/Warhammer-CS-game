@@ -73,6 +73,16 @@ namespace Prototype_1._1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Space_marine_2 {
+            get {
+                object obj = ResourceManager.GetObject("Space_marine_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ultramarine_logo {
             get {
                 object obj = ResourceManager.GetObject("ultramarine_logo", resourceCulture);
