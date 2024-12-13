@@ -15,14 +15,19 @@ namespace Prototype_1._1
         private enum GameState
         {
             Setup,
-            PlayerMove
+            PlayerMove,
+            PlayerShoot,
+            EnemyMove,
+            EnemyShoot
+
         }
 
         private List<PictureBox> players = new List<PictureBox>();
         private GameState currentState = GameState.Setup;
         private bool isPlayerSelected = false;
         private PictureBox selectedPlayer = null;
-        private Button endBtn;
+        private Button SetupendBtn;
+        private Button TurnendBtn;
         private int piecesToPlace = 4;
 
         public Form2(Form1 parent)
@@ -31,6 +36,7 @@ namespace Prototype_1._1
             this.DoubleBuffered = true;
             this.Click += Form_Click;
             SetupEndButton();
+            EndTurnButton();
         }
 
         int MX = 10;
@@ -41,20 +47,37 @@ namespace Prototype_1._1
 
         private void SetupEndButton()
         {
-            endBtn = new Button();
-            endBtn.Text = "End Setup";
-            endBtn.Size = new Size(100, 30);
-            endBtn.Location = new Point(highwidth * squaresize + 20, 50);
-            endBtn.Click += EndBtn_Click;
-            endBtn.Enabled = false;
-            this.Controls.Add(endBtn);
+            SetupendBtn = new Button();
+            SetupendBtn.Text = "End Setup";
+            SetupendBtn.Size = new Size(100, 30);
+            SetupendBtn.Location = new Point(highwidth * squaresize + 20, 50);
+            SetupendBtn.Click += SetupEndBtn_Click;
+            SetupendBtn.Enabled = false;
+            this.Controls.Add(SetupendBtn);
         }
 
-        private void EndBtn_Click(object sender, EventArgs e)
+        private void EndTurnButton()
+        {
+            TurnendBtn = new Button();
+            TurnendBtn.Text = "End Turn";
+            TurnendBtn.Size = new Size(100, 30);
+            TurnendBtn.Location = new Point(highwidth * squaresize + 20, 90);
+            TurnendBtn.Click += EndTurnBtn_Click;
+            TurnendBtn.Enabled = true;
+            this.Controls.Add(TurnendBtn);
+        }
+
+        private void SetupEndBtn_Click(object sender, EventArgs e)
         {
             currentState = GameState.PlayerMove;
-            endBtn.Text = "Game Active";
-            endBtn.Enabled = false;
+            SetupendBtn.Text = "Game Active";
+            SetupendBtn.Enabled = false;
+        }
+
+        private void EndTurnBtn_Click(object sender, EventArgs e)
+        {
+            currentState = GameState.EnemyMove;
+            TurnendBtn.Enabled = false;
         }
 
         private void Player(int x, int y)
@@ -73,7 +96,7 @@ namespace Prototype_1._1
 
                 if (piecesToPlace == 0)
                 {
-                    endBtn.Enabled = true;
+                    SetupendBtn.Enabled = true;
                 }
             }
         }
