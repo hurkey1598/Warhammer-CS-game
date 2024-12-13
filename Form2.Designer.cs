@@ -35,15 +35,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.ClientSize = new System.Drawing.Size(672, 617);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientSize = new System.Drawing.Size(848, 617);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
             this.ShowIcon = false;
             this.Text = "Form2";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.GridLines);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MouseClicked);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMoved);
             this.ResumeLayout(false);
 
