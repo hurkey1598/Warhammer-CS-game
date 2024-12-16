@@ -98,5 +98,14 @@
   <ItemGroup>
     <None Include="Resources\Space marine Background Removed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mountain pixel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mountain_pixel-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\necron.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

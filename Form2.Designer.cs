@@ -1,4 +1,4 @@
-﻿namespace Prototype_1._1
+﻿namespace itteration_1
 {
     partial class Form2
     {
