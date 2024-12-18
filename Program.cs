@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Prototype_1._1
+namespace Warhammer
 {
     internal static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace Prototype_1._1
+﻿namespace Warhammer
 {
     partial class Form2
     {

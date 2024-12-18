@@ -1,4 +1,4 @@
-﻿namespace Prototype_1._1
+﻿namespace Warhammer
 {
     partial class Form1
     {
@@ -38,9 +38,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::Prototype_1._1.Properties.Resources.ultramarine_logo;
+            this.pictureBox1.Image = global::Warhammer.Properties.Resources.ultramarine_logo;
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(133, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -54,7 +54,7 @@
             this.GameBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GameBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.GameBtn.Location = new System.Drawing.Point(217, 15);
-            this.GameBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GameBtn.Margin = new System.Windows.Forms.Padding(4);
             this.GameBtn.Name = "GameBtn";
             this.GameBtn.Size = new System.Drawing.Size(175, 37);
             this.GameBtn.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.SettingBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SettingBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.SettingBtn.Location = new System.Drawing.Point(217, 57);
-            this.SettingBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SettingBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SettingBtn.Name = "SettingBtn";
             this.SettingBtn.Size = new System.Drawing.Size(175, 37);
             this.SettingBtn.TabIndex = 2;
@@ -84,7 +84,7 @@
             this.QuitBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuitBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.QuitBtn.Location = new System.Drawing.Point(217, 101);
-            this.QuitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.QuitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.QuitBtn.Name = "QuitBtn";
             this.QuitBtn.Size = new System.Drawing.Size(175, 37);
             this.QuitBtn.TabIndex = 3;
@@ -103,10 +103,10 @@
             this.Controls.Add(this.GameBtn);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "          ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
