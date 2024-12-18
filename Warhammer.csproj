@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{227FE626-F1BC-4C06-8CEC-DDAD6F196A2E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Prototype_1._1</RootNamespace>
-    <AssemblyName>Prototype 1.1</AssemblyName>
+    <RootNamespace>Warhammer</RootNamespace>
+    <AssemblyName>Warhammer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

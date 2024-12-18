@@ -1,4 +1,4 @@
-﻿namespace itteration_1
+﻿namespace Warhammer
 {
     partial class Form2
     {

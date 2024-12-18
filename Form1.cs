@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using itteration_1;
 
-namespace Prototype_1._1
+namespace Warhammer
 {
     public partial class Form1 : Form
     {

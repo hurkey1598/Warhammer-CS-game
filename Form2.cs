@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Prototype_1._1;
 
-namespace itteration_1
+namespace Warhammer
 {
     public partial class Form2 : Form
     {
@@ -133,7 +132,7 @@ namespace itteration_1
                 player.Size = new System.Drawing.Size(squaresize - 2, squaresize - 2);
                 player.SizeMode = PictureBoxSizeMode.StretchImage;
                 player.Location = new System.Drawing.Point(x, y);
-                player.Image = Prototype_1._1.Properties.Resources.Space_marine_2;
+                player.Image = Properties.Resources.Space_marine_2;
                 player.Click += PlayerImage_Click;
 
                 // Add the player piece to the list and dictionary
@@ -310,7 +309,7 @@ namespace itteration_1
                     Size = new Size(squaresize - 2, squaresize - 2),
                     Location = mountainLocation,
                     SizeMode = PictureBoxSizeMode.StretchImage,
-                    Image = Prototype_1._1.Properties.Resources.mountain_pixel
+                    Image = Properties.Resources.mountain_pixel
                 };
 
                 mountains.Add(mountain);
@@ -348,7 +347,7 @@ namespace itteration_1
                     Size = new Size(squaresize - 2, squaresize - 2),
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     Location = necronLocation,
-                    Image = Prototype_1._1.Properties.Resources.necron
+                    Image = Properties.Resources.necron
                 };
 
                 // Add click event for Necron
