@@ -26,6 +26,7 @@ namespace Warhammer
         private Button SetupendBtn;
         private Button TurnendBtn;
         private int piecesToPlace = 4;
+        private TextBox TurnDisplayBox;
 
         // Dictionary to track the movement of player pieces
         private Dictionary<PictureBox, int> playerMoves = new Dictionary<PictureBox, int>();
@@ -50,6 +51,11 @@ namespace Warhammer
         // Dictionary to track Necron movements
         private Dictionary<PictureBox, int> necronMoves = new Dictionary<PictureBox, int>();
 
+        // Keeps track of how many units there are on both sides
+        private int spaceMarineCount = 0;
+        private int necronCount = 0;
+
+
         public Form2(Form1 parent)
         {
             InitializeComponent();
@@ -63,6 +69,8 @@ namespace Warhammer
             // Place initial mountains and Necrons on the board
             PlaceMountains(3);
             PlaceNecrons(5); // maximum 15 or game crashes
+
+            TurnDisplay();
         }
 
         // Variables for grid and UI layout
@@ -78,7 +86,7 @@ namespace Warhammer
             SetupendBtn = new Button();
             SetupendBtn.Text = "End Setup";
             SetupendBtn.Size = new Size(100, 30);
-            SetupendBtn.Location = new Point(highwidth * squaresize + 20, 50);
+            SetupendBtn.Location = new Point(highwidth * squaresize + 20, 10);
             SetupendBtn.Click += SetupEndBtn_Click;
             SetupendBtn.Enabled = false;
             this.Controls.Add(SetupendBtn);
@@ -90,18 +98,49 @@ namespace Warhammer
             TurnendBtn = new Button();
             TurnendBtn.Text = "End Turn";
             TurnendBtn.Size = new Size(100, 30);
-            TurnendBtn.Location = new Point(highwidth * squaresize + 20, 90);
+            TurnendBtn.Location = new Point(highwidth * squaresize + 20, 460);
             TurnendBtn.Click += EndTurnBtn_Click;
             TurnendBtn.Enabled = true;
             this.Controls.Add(TurnendBtn);
         }
 
+        private void TurnDisplay()
+        {
+            TurnDisplayBox = new TextBox();
+            TurnDisplayBox.Text = currentState.ToString(); 
+            TurnDisplayBox.Size = new Size(100, 50);
+            TurnDisplayBox.Location = new Point(highwidth * squaresize + 20, 230);
+            TurnDisplayBox.TextAlign = HorizontalAlignment.Center;
+            TurnDisplayBox.Enabled = false;
+            this.Controls.Add(TurnDisplayBox);
+
+        }
+
         //  "End Setup" button click
         private void SetupEndBtn_Click(object sender, EventArgs e)
         {
+            while (spaceMarineCount <= 3)
+            {
+                DialogResult dialogResult = MessageBox.Show("Place more??", "Units remaining", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    return;
+                }
+
+                if (dialogResult == DialogResult.No)
+                {
+                    currentState = GameState.PlayerMove; // Transition to PlayerMove state
+                    SetupendBtn.Text = "Game Active";
+                    SetupendBtn.Visible = false;
+                    return;
+                }
+                
+            }
+
             currentState = GameState.PlayerMove; // Transition to PlayerMove state
             SetupendBtn.Text = "Game Active";
-            SetupendBtn.Enabled = false;
+            SetupendBtn.Visible = false;
         }
 
         // "End Turn" button click
@@ -121,6 +160,7 @@ namespace Warhammer
             // goes back to PlayerMove phase
             TurnendBtn.Enabled = true;
             currentState = GameState.PlayerMove;
+
         }
 
         // Adds a new player piece to the board during setup
@@ -135,19 +175,21 @@ namespace Warhammer
                 player.Image = Properties.Resources.Space_marine_2;
                 player.Click += PlayerImage_Click;
 
-                // Add the player piece to the list and dictionary
-                players.Add(player);
-                playerMoves[player] = 0;
-
                 this.Controls.Add(player);
                 piecesToPlace--;
 
                 // Enable the "End Setup" button once all pieces are placed
-                if (piecesToPlace == 0)
+                if (spaceMarineCount >= 0)
                 {
                     SetupendBtn.Enabled = true;
                 }
+
+                // Add the player piece to the list and dictionary and adds them to a count
+                players.Add(player);
+                playerMoves[player] = 0;
+                spaceMarineCount++; // Increment the count for Space Marines
             }
+
         }
 
         // player piece selection during PlayerMove phase
@@ -332,6 +374,7 @@ namespace Warhammer
             {
                 Point necronLocation;
 
+
                 do
                 {
                     // Generate random position for the Necrons to move to
@@ -357,6 +400,7 @@ namespace Warhammer
                 this.Controls.Add(necron);
 
                 necronMoves[necron] = MaxMovementNecrons;
+                necronCount++;
             }
         }
 
